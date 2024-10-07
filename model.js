@@ -1,9 +1,16 @@
 export async function fetchProducts() {
-    const response = await fetch('produits.txt');
-    const products = await response.json();
-    return products;
+    try {
+        const response = await fetch('produits.txt');
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const products = await response.json();
+        return products;
+    } catch (error) {
+        console.error('Error fetching products:', error);
+        throw error; // Rejette la promesse pour que l'appelant puisse gérer l'erreur
+    }
 }
-
 export function filterProducts(products, inStockOnly, searchTerm) {
     let filteredProducts = products;
 
