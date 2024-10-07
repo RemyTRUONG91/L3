@@ -1,4 +1,5 @@
 export async function fetchProducts() {
+    //Exporte une fonction asynchrone qui récupère les produits depuis un fichier texte
     try {
         const response = await fetch('produits.txt');
         if (!response.ok) {
@@ -12,6 +13,7 @@ export async function fetchProducts() {
     }
 }
 export function filterProducts(products, inStockOnly, searchTerm) {
+    //Filtre les produits en fonction de l'option "En stock uniquement" et de la recherche
     let filteredProducts = products;
 
     if (inStockOnly) {
@@ -24,6 +26,7 @@ export function filterProducts(products, inStockOnly, searchTerm) {
 }
 
 export function groupByCategory(products) {
+    //Groupe les produits par catégorie pour l'affichage
     const categories = {};
 
     products.forEach(product => {
