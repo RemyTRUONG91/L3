@@ -24,7 +24,7 @@ function traitementProduits(products) {
 function refreshProducts() {//S'occupe de gérer les résultats de manière asynchrone
     
     model.fetchProducts().then(traitementProduits).catch(error => {
-    //Si le modèle arrive à récupérer les produits,la fonction traitementProduits est appelée pour charger les données dans la vue
+    //Si le modèle arrive à récupérer les produits,la fonction traitementProduits est appelée pour charger les données dans la vue sinon une erreur est affichée
         console.error('Error fetching products:', error);
     });
 }
