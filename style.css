@@ -1,0 +1,9 @@
+table {
+    border-collapse: collapse; /* Ensure borders are collapsed */
+    opacity: 0.8; /* Make the table slightly visible */
+}
+
+th, td {
+    border: 1px solid black; /* Fully visible border color */
+    padding: 8px;
+}
